@@ -10,20 +10,23 @@ namespace MoodAnalyzer
     public class MoodTest
     {
         public string Message;
-
+        public MoodTest() 
+        {
+            Message = " ";
+        }
         public MoodTest(string Message)
         {
             this.Message = Message;
         }
         public string Analyzer()
         {
-            if (Message.Contains("Happy"))
+            if (Message.Contains("sad"))
             {
-                return "Happy";
+                return "SAD";
             }
             else
             {
-                return "Sad";
+                return "HAPPY";
             }
         }
     }

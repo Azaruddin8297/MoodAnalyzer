@@ -20,14 +20,25 @@ namespace MoodAnalyzer
         }
         public string Analyzer()
         {
-            if (Message.Contains("sad"))
+            try
             {
-                return "SAD";
-            }
-            else
+                if (Message.Contains("sad"))
+                {
+                    return "SAD";
+                }
+                else if (Message.Contains("Happy"))
+                {
+                    return "HAPPY";
+                }
+                else
+                {
+                    return "Cannot Determine The Mood";
+                }
+            }catch(NullReferenceException)
             {
-                return "HAPPY";
+                return "HAPPYYY";
             }
+          
         }
     }
 }

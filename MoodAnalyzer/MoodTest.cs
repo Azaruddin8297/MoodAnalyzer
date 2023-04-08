@@ -22,19 +22,21 @@ namespace MoodAnalyzer
         {
             try
             {
-                if (Message.Contains("sad"))
-                {
-                    return "SAD";
-                }
-                else if (Message.Contains("Happy"))
-                {
-                    return "HAPPY";
-                }
-                else
-                {
-                    return "Cannot Determine The Mood";
-                }
-            }catch(NullReferenceException)
+                    if (Message == null)
+                    {
+                        throw new MoodAnalysisException( "Mood should not be null");
+                    }
+                    if (Message.Equals(string.Empty))
+                    {
+                        throw new MoodAnalysisException("Mood should not be empty");
+                    }
+                    if (Message.Contains("Sad"))
+                        return "Sad";
+                    else
+                        return "Happy";
+            }
+             
+            catch(NullReferenceException)
             {
                 return "HAPPYYY";
             }

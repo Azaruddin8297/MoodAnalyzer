@@ -5,12 +5,15 @@
         static void Main(string[] args)
         {
 
-            MoodTest mt = new MoodTest(null);
-            Console.WriteLine( mt.Analyzer());
-            //MoodTest mt1 = new MoodTest("I am Any Thing");
-            //Console.WriteLine(mt1.Analyzer());
-            //MoodTest mt3 = new MoodTest();
-            //Console.WriteLine(mt3.Analyzer());
+           
+            MoodTest mt1 = new MoodTest("I am Any Thing");
+            Console.WriteLine(mt1.Analyzer());
+            Console.WriteLine("***********************");
+            MoodTest mt3 = new MoodTest(null);
+            Console.WriteLine(mt3.Analyzer());
+            Console.WriteLine("***********************");
+            MoodTest mt = new MoodTest(string.Empty);
+            Console.WriteLine(mt.Analyzer());
         }
     }
 }

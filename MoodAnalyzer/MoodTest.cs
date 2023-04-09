@@ -10,21 +10,37 @@ namespace MoodAnalyzer
     public class MoodTest
     {
         public string Message;
-
+        public MoodTest() 
+        {
+            Message = " ";
+        }
         public MoodTest(string Message)
         {
             this.Message = Message;
         }
         public string Analyzer()
         {
-            if (Message.Contains("Happy"))
+            try
+            {
+                    if (Message == null)
+                    {
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.Null, "Mood should not be null");
+                    }
+                    if (Message.Equals(string.Empty))
+                    {
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.Empty,"Mood should not be empty");
+                    }
+                    if (Message.Contains("Sad"))
+                        return "Sad";
+                    else
+                        return "Happy";
+            }
+             
+            catch(NullReferenceException)
             {
                 return "Happy";
             }
-            else
-            {
-                return "Sad";
-            }
+          
         }
     }
 }

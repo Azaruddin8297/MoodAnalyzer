@@ -24,11 +24,11 @@ namespace MoodAnalyzer
             {
                     if (Message == null)
                     {
-                        throw new MoodAnalysisException( "Mood should not be null");
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.Null, "Mood should not be null");
                     }
                     if (Message.Equals(string.Empty))
                     {
-                        throw new MoodAnalysisException("Mood should not be empty");
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.Empty,"Mood should not be empty");
                     }
                     if (Message.Contains("Sad"))
                         return "Sad";

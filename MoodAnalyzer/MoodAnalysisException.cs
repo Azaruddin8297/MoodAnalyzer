@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 namespace MoodAnalyzer
 {
     public class MoodAnalysisException : Exception
+
     {
-        public MoodAnalysisException(string message) : base(message)
+        public readonly ExceptionType type;
+        public MoodAnalysisException(ExceptionType type, string message) : base(message)
         {
             
+        } 
+        public enum ExceptionType
+        {
+            Null,Empty
         }
     }
 }
